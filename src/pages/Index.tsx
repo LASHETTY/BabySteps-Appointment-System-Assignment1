@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
@@ -31,6 +32,7 @@ const mockDoctors = [
 
 const Index = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [selectedDoctor, setSelectedDoctor] = useState(null);
 
   const handleDoctorSelect = (doctor: any) => {
@@ -39,6 +41,7 @@ const Index = () => {
       title: "Doctor Selected",
       description: `You've selected ${doctor.name}`,
     });
+    navigate("/booking", { state: { doctor } });
   };
 
   return (
