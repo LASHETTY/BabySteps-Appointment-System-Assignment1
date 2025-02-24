@@ -1,67 +1,87 @@
-## Project info
 
-**URL**: https://lovable.dev/projects/ab75839b-86e3-459d-843b-45530c2b1b51
+# BabySteps Appointment Booking System
 
-## How can I edit this code?
+A modern appointment booking system for prenatal care services built with React, TypeScript, and Vite. This system allows patients to book appointments with doctors through an intuitive interface.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Interactive doctor selection interface with doctor cards
+- Appointment booking system with:
+  - Calendar-based date selection (weekends and past dates disabled)
+  - Time slot selection in 30-minute intervals
+  - Patient information form with validation
+  - Real-time feedback using toast notifications
+- Responsive design for all screen sizes
+- Modern UI using shadcn/ui components
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ab75839b-86e3-459d-843b-45530c2b1b51) and start prompting.
+## Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+babysteps-appointment-system/
+├── src/
+│   ├── pages/            # Main application pages
+│   ├── components/       # Reusable UI components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions
+│   └── App.tsx          # Root component
+└── README.md            # Project documentation
+```
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **UI Components**: 
+  - shadcn/ui (based on Radix UI)
+  - Lucide React for icons
+- **Styling**: Tailwind CSS
+- **Date Handling**: React Day Picker with date-fns
+- **Routing**: React Router DOM
+- **State Management**: React Query
+- **Form Handling**: React Hook Form
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Design Decisions & Assumptions
 
-Follow these steps:
+1. Authentication is not implemented in the current version
+2. Working hours are set to:
+   - Monday to Friday
+   - Morning: 9:00 AM - 12:00 PM
+   - Afternoon: 2:00 PM - 5:00 PM
+3. Appointments are fixed at 30-minute intervals
+4. All times are handled in 24-hour format
+5. The system uses local timezone for simplicity
+6. Appointment slots are currently handled in-memory (no backend persistence)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Development Setup
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone the repository:
+```bash
+git clone <repository-url>
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at http://localhost:5173
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
 
-**Use GitHub Codespaces**
+1. Browse the list of available doctors on the home page
+2. Click "Book Appointment" for your chosen doctor
+3. Select an available date from the calendar
+4. Choose a time slot from the available options
+5. Fill in your personal information
+6. Submit the booking form
+7. Receive confirmation via toast notification
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Status
 
-## What technologies are used for this project?
+This is the frontend implementation of the BabySteps Appointment Booking System. Currently, the application stores data in-memory and provides a complete user interface for booking appointments. Backend integration for data persistence can be implemented in future iterations.
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ab75839b-86e3-459d-843b-45530c2b1b51) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
