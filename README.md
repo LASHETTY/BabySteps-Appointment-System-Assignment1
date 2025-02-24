@@ -56,7 +56,7 @@ babysteps-appointment-system/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone <https://github.com/LASHETTY/BabySteps-Appointment-System-Assignment1.git>
 ```
 
 2. Install dependencies:
